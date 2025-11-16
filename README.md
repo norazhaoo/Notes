@@ -128,9 +128,28 @@ This project can be deployed to GitHub Pages. Follow these steps:
 
 3. **Push to GitHub**:
    - The GitHub Actions workflow (`.github/workflows/deploy.yml`) will automatically build and deploy your site
-   - After pushing to the `main` branch, go to Settings → Pages
+   - Push your code to GitHub:
+     ```bash
+     git add .
+     git commit -m "Initial commit with GitHub Pages setup"
+     git push origin main
+     ```
+   - **Every push to the `main` branch will automatically trigger a new deployment**
+   - Go to your repository on GitHub → Actions tab
+   - Wait for the workflow to complete (it will create the `gh-pages` branch automatically on first run)
+   - After the workflow completes, go to Settings → Pages
    - Select "gh-pages" branch and "/ (root)" folder
+   - Click Save
    - Your site will be available at `https://username.github.io/Notes/` (or `https://username.github.io/` if using username.github.io)
+   - **Note**: The `gh-pages` branch will be created automatically after the first successful workflow run
+
+### Manual Trigger
+
+You can also manually trigger the deployment:
+- Go to your repository on GitHub → Actions tab
+- Select "Deploy to GitHub Pages" workflow
+- Click "Run workflow" button
+- Select the branch (usually `main`) and click "Run workflow"
 
 ### Manual Deployment
 

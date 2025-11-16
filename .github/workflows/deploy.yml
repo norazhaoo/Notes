@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main  # 如果你的主分支是 master，改为 master
+    # 确保每次 push 都会触发部署
+    paths-ignore: []
+  # 也可以手动触发
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -32,7 +36,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          # 如果仓库名是 username.github.io，注释掉下面这行
-          # 如果仓库名是其他名称，取消注释并设置正确的路径
-          # cname: your-domain.com  # 可选：如果你有自定义域名
+          # 如果仓库名是 username.github.io，设置 force_orphan: false
+          # 如果仓库名是其他名称（如 Notes），gh-pages 分支会自动创建
+          force_orphan: false
 
