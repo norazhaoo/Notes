@@ -8,7 +8,7 @@ import Post from './pages/Post'
 function App() {
   return (
     <LanguageProvider>
-      <Router>
+      <Router basename="/Notes">
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />

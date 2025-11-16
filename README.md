@@ -118,8 +118,8 @@ This project can be deployed to GitHub Pages. Follow these steps:
 ### Automatic Deployment (Recommended)
 
 1. **Update the base path in `vite.config.js`**:
-   - If your repository name is `username.github.io`, set `base: '/'`
-   - If your repository name is something else (e.g., `Notes`), set `base: '/Notes/'`
+   - The `base` is set to `/Notes/` for subpath deployment
+   - If your repository name is different, update it to match: `/your-repo-name/`
 
 2. **Enable GitHub Actions**:
    - Go to your repository Settings → Actions → General
@@ -140,7 +140,7 @@ This project can be deployed to GitHub Pages. Follow these steps:
    - After the workflow completes, go to Settings → Pages
    - Select "gh-pages" branch and "/ (root)" folder
    - Click Save
-   - Your site will be available at `https://username.github.io/Notes/` (or `https://username.github.io/` if using username.github.io)
+   - Your site will be available at `https://username.github.io/Notes/` (subpath)
    - **Note**: The `gh-pages` branch will be created automatically after the first successful workflow run
 
 ### Manual Trigger

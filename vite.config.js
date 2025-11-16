@@ -7,7 +7,7 @@ export default defineConfig({
   // GitHub Pages 部署配置
   // 如果仓库名是 username.github.io，base 应该是 '/'
   // 如果仓库名是其他名称，base 应该是 '/repository-name/'
-  base: process.env.NODE_ENV === 'production' ? '/Notes/' : '/',
+  base: '/Notes/',
   define: {
     'global': 'globalThis',
   },

@@ -39,7 +39,7 @@ function Home() {
           <div className="profile-section">
             <div className="profile-image-wrapper">
               <img 
-                src="/images/profile.png" 
+                src={`${import.meta.env.BASE_URL}images/profile.png`}
                 alt="Nora" 
                 className="profile-image"
               />
@@ -93,19 +93,17 @@ function Home() {
           <span className="title-line"></span>
         </h2>
         <div className="contact-content">
-          <p className="contact-subtitle">{t('getInTouch')}</p>
-          <p className="contact-desc">{t('contactDesc')}</p>
           <div className="contact-links">
-            <a href="mailto:norazhao039@gmail.com" className="contact-link" target="_blank" rel="noopener noreferrer" title={t('email')}>
+            <a href="mailto:norazhao039@gmail.com" className="contact-link" target="_blank" rel="noopener noreferrer" title={t('email')} aria-label={t('email')}>
               <FiMail className="contact-icon" />
             </a>
-            <a href="tel:+8618201791399" className="contact-link" target="_blank" rel="noopener noreferrer" title={t('phone')}>
+            <a href="tel:+8618201791399" className="contact-link" target="_blank" rel="noopener noreferrer" title={t('phone')} aria-label={t('phone')}>
               <FiPhone className="contact-icon" />
             </a>
-            <a href="https://www.linkedin.com/in/nora-zhao-0210b41bb" className="contact-link" target="_blank" rel="noopener noreferrer" title={t('linkedin')}>
+            <a href="https://www.linkedin.com/in/nora-zhao-0210b41bb" className="contact-link" target="_blank" rel="noopener noreferrer" title={t('linkedin')} aria-label={t('linkedin')}>
               <FiLinkedin className="contact-icon" />
             </a>
-            <a href="https://www.instagram.com/norazhaoo/" className="contact-link" target="_blank" rel="noopener noreferrer" title={t('instagram')}>
+            <a href="https://www.instagram.com/norazhaoo/" className="contact-link" target="_blank" rel="noopener noreferrer" title={t('instagram')} aria-label={t('instagram')}>
               <FiInstagram className="contact-icon" />
             </a>
           </div>
