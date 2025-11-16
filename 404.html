@@ -9,23 +9,33 @@
       // This script takes the current url and converts the path and query
       // string into just a query string, and then redirects the browser
       // to the new url with only a query string and hash fragment,
-      // e.g., https://www.foo.com/one/two?a=b&c=d#qwe, becomes
-      // https://www.foo.com/?/one/two&a=b~and~c=d#qwe
+      // e.g., https://www.foo.com/Notes/one/two?a=b&c=d#qwe, becomes
+      // https://www.foo.com/Notes/?/one/two&a=b~and~c=d#qwe
       // Note: this 404.html file must be at least 512 bytes for some
       // browsers to recognize it as a valid 404 page.
       (function(l) {
+        // Get the base path (e.g., '/Notes/')
+        var pathSegmentsToKeep = 1; // Number of path segments to keep (e.g., '/Notes/')
+        var path = l.pathname.split('/').filter(function(segment) {
+          return segment !== '';
+        });
+        var basePath = '/' + path.slice(0, pathSegmentsToKeep).join('/') + '/';
+        
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
           }).join('?');
           window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
+              basePath + decoded + l.hash
           );
         }
       }(window.location))
     </script>
   </head>
   <body>
+    <!-- This file must be at least 512 bytes for some browsers to recognize it as a valid 404 page. -->
+    <!-- Additional content to ensure file size is sufficient -->
+    <p>Redirecting...</p>
   </body>
 </html>
 
